@@ -11,6 +11,12 @@ saveBtn.each(function () {
     if(time<current){
         $(this).siblings(".description").addClass("past")
     }
+    else if(time>current){
+        $(this).siblings(".description").addClass("future")
+    }
+    else {
+        $(this).siblings(".description").addClass("present")
+    }
     $(this).on("click", function (event) {
         var hour = $(this).siblings(".hour").text()
         var text = $(this).siblings(".description").val()
